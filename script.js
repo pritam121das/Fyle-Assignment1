@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
       let income;
       let extraIncome;
       let deductions;
-
-      // Perform validation
       let error = false;
       var incomeiconTag = document.getElementById("grossincome");
       var extaincomeiconTag = document.getElementById("extraincome");
@@ -55,12 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function calculateTax(income, extraIncome, deductions, age) {
-      // Check if any input is not a number
       if (isNaN(income) || isNaN(extraIncome) || isNaN(deductions)) {
           return "Error: Please enter valid numeric values for income, extra income, and deductions.";
       }
-
-      // Handle undefined extraIncome and deductions
       extraIncome = extraIncome || 0;
       deductions = deductions || 0;
 
