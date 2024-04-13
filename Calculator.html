@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <div class="outerbody">
+    <div style="border: 10px solid lavender;">
+      <div class="bodywithborder">
+        <div class="calcstruct">
+          <form id="taxForm" class="calcform">
+            <label for="income">Enter gross annual income <i class="bi-question-circle" data-toggle="tooltip" data-placement="top" title="Gross annual income is your total salary in a year before any deductions"></i></label>
+            <div><input id="income" style="width: 100%;" required placeholder="Enter gross annual income"><i id="grossincome" class="bi-exclamation-circle" data-toggle="tooltip" data-placement="top" style="display: none; margin-left: -20px;" title="Please enter numbers only"></i></div>
+            
+        
+            <label for="extraIncome">Enter extra income <i class="bi-question-circle" data-toggle="tooltip" data-placement="top" title="Extra income refers to any additional earnings beyond your primary source of income"></i></label>
+            <div><input id="extraIncome" style="width: 100%;" placeholder="Enter extra income from other sources"><i id="extraincome" class="bi-exclamation-circle" data-toggle="tooltip" data-placement="top" style="display: none; margin-left: -20px;" title="Please enter numbers only"></i></div>
+        
+            <label for="age">Enter age group <i class="bi-question-circle" data-toggle="tooltip" data-placement="top" title="Age group refers to the category that your age falls into"></i></label>
+            <select id="age" required>
+              <option value="<40">&lt;40</option>
+              <option value=">=40&<60">&ge;40 &lt;60</option>
+              <option value=">=60">&ge;60</option>
+            </select>
+            <span class="error-icon"></span><br>
+        
+            <label for="deductions">Enter total applicable deductions <i class="bi-question-circle" data-toggle="tooltip" data-placement="top" title="Total applicable deductions are the combined amount of deductions that can be subtracted from your gross income to determine your taxable income"></i></label>
+            <div><input id="deductions" style="width: 100%;" placeholder="Add total applicable deductions"><i id="deduction" class="bi-exclamation-circle" data-toggle="tooltip" data-placement="top" style="display: none; margin-left: -20px;" title="Please enter numbers only"></i></div>
+
+            <button type="submit">Submit</button>
+        
+          </form>
+
+        
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <div id="taxResult">
+                
+              </div>
+              <button id="closeButton">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+
+  <script src="script.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();   
+    });
+  </script>
+</body>
+</html>
